@@ -1,57 +1,67 @@
 {
   "data": [
     {
+      "parent": null,
       "id": 0,
       "label": "Nagłówek drzewa wielowierszowy",
       "type": "checkbox",
       "child": [
         {
+          "parent": 0,
           "id": 1,
           "label": "Pododział 1",
           "type": "radio",
           "child": [
             {
+              "parent": 1,
               "id": 4,
               "label": "Zespół 1 HR",
               "type": null,
               "child": []
             },
             {
+              "parent": 1,
               "id": 5,
               "label": "Zespół 2 Marketing",
               "type": null,
               "child": []
             },
             {
+              "parent": 1,
               "id": 6,
               "label": "Zespół 3 Analitycy",
               "type": "checkbox",
               "child": [
                 {
+                  "parent": 6,
                   "id": 7,
                   "label": "Podzespół 3.1 Kalendarz",
                   "type": null,
                   "child": []
                 },
                 {
+                  "parent": 6,
                   "id": 8,
                   "label": "Podzespół 3.2 Kokpit",
                   "type": null,
                   "child": []
                 },
                 {
+                  "parent": 6,
                   "id": 9,
                   "label": "Podzespół 3.3 Widok",
                   "type": null,
                   "child": []
                 },
                 {
+                  "parent": 6,
                   "id": 10,
                   "label": "Podzespół 3.4 Różności",
                   "type": null,
                   "child": []
                 },
                 {
+                  "parent": 6,
                   "id": 11,
                   "label": "Podzespół 3.5 Szukaj",
                   "type": null,
@@ -60,11 +70,13 @@
               ]
             },
             {
+              "parent": 1,
               "id": 12,
               "label": "Zespół 4 Programiści",
               "type": "checkbox",
               "child": [
                 {
+                  "parent": 12,
                   "id": 13,
                   "label": "Podzespół 4.1 Front-end",
                   "type": null,
@@ -75,15 +87,32 @@
           ]
         },
         {
+          "parent": 0,
           "id": 2,
           "label": "Pododział 2",
+          "type": "radio",
+          "child": [
+            {
+              "parent": 12,
+              "id": 15,
+              "label": "Radio test",
+              "type": null,
+              "child": []
+            }
+          ]
+        },
+        {
+          "parent": 0,
+          "id": 3,
+          "label": "Pododział 3",
           "type": "radio",
           "child": []
         },
         {
-          "id": 3,
-          "label": "Pododział 3",
-          "type": "radio",
+          "parent": 0,
+          "id": 14,
+          "label": "Niezrzeszeni",
+          "type": null,
           "child": []
         }
       ]
