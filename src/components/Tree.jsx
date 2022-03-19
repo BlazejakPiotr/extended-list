@@ -6,17 +6,37 @@ const Tree = () => {
   const [state, setState] = useState({
     data: list.data,
     extended: [],
+    radio: [],
   });
 
-  const handleExtendedCheck = (id) => {
-    return state.extended.includes(id);
-  };
+  const handleTypeRadio = (arr) =>
+    setState((prevState) => {
+      return { ...prevState, radio: [...prevState.radio, arr] };
+    });
 
-  const handleExtend = (id) => {
+  const handleExtend = (id, radionodes) => {
+    // console.log(radionodes);
+    radionodes &&
+      radionodes.map((radio) => {
+        // console.log("raz");
+        handleExtend(radio);
+      });
+    if (radionodes) {
+      radionodes.forEach((node) => {
+        // console.log(node);
+        let filtered = state.extended.filter((element) => {
+          return node !== element;
+        });
+        setState((prevState) => {
+          return { ...prevState, extended: filtered };
+        });
+      });
+    }
     if (state.extended.includes(id)) {
       let filtered = state.extended.filter((element) => {
         return element !== id;
       });
+
       setState((prevState) => {
         return { ...prevState, extended: filtered };
       });
@@ -25,6 +45,10 @@ const Tree = () => {
         return { ...prevState, extended: [...prevState.extended, id] };
       });
     }
+  };
+  const handleExtendedCheck = (id) => {
+    console.log(id);
+    return state.extended.includes(id);
   };
 
   let nodes = state.data.map(function (listItem) {
@@ -35,15 +59,12 @@ const Tree = () => {
         key={listItem.id}
         handleExtend={handleExtend}
         handleExtendedCheck={handleExtendedCheck}
+        handleTypeRadio={handleTypeRadio}
       />
     );
   });
 
-  return (
-    <div>
-      <ul>{nodes}</ul>
-    </div>
-  );
+  return <ul>{nodes}</ul>;
 };
 
 export default Tree;

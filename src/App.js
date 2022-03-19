@@ -6,9 +6,8 @@ function App() {
     <div className="App">
       <h1>Rozwijana lista</h1>
       <h4>zadanie rekrutracyjne Softwarely</h4>
-      <div>
-        <Tree />
-      </div>
+
+      <Tree />
     </div>
   );
 }
