@@ -1,0 +1,92 @@
+{
+  "data": [
+    {
+      "id": 0,
+      "label": "Nagłówek drzewa wielowierszowy",
+      "type": "checkbox",
+      "child": [
+        {
+          "id": 1,
+          "label": "Pododział 1",
+          "type": "radio",
+          "child": [
+            {
+              "id": 4,
+              "label": "Zespół 1 HR",
+              "type": null,
+              "child": []
+            },
+            {
+              "id": 5,
+              "label": "Zespół 2 Marketing",
+              "type": null,
+              "child": []
+            },
+            {
+              "id": 6,
+              "label": "Zespół 3 Analitycy",
+              "type": "checkbox",
+              "child": [
+                {
+                  "id": 7,
+                  "label": "Podzespół 3.1 Kalendarz",
+                  "type": null,
+                  "child": []
+                },
+                {
+                  "id": 8,
+                  "label": "Podzespół 3.2 Kokpit",
+                  "type": null,
+                  "child": []
+                },
+                {
+                  "id": 9,
+                  "label": "Podzespół 3.3 Widok",
+                  "type": null,
+                  "child": []
+                },
+                {
+                  "id": 10,
+                  "label": "Podzespół 3.4 Różności",
+                  "type": null,
+                  "child": []
+                },
+                {
+                  "id": 11,
+                  "label": "Podzespół 3.5 Szukaj",
+                  "type": null,
+                  "child": []
+                }
+              ]
+            },
+            {
+              "id": 12,
+              "label": "Zespół 4 Programiści",
+              "type": "checkbox",
+              "child": [
+                {
+                  "id": 13,
+                  "label": "Podzespół 4.1 Front-end",
+                  "type": null,
+                  "child": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "label": "Pododział 2",
+          "type": "radio",
+          "child": []
+        },
+        {
+          "id": 3,
+          "label": "Pododział 3",
+          "type": "radio",
+          "child": []
+        }
+      ]
+    }
+  ]
+}
