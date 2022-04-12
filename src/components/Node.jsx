@@ -1,16 +1,10 @@
-const Node = ({
-  node,
-  children,
-  handleExtend,
-  handleExtendedCheck,
-  handleTypeRadio,
-}) => {
+const Node = ({ node, children, handleExtend, handleExtendedCheck }) => {
   let childnodes = null;
-
+  let radio = [];
   if (children) {
     childnodes = children.map(function (childnode) {
-      if (childnode.type === "radio") {
-        console.log(childnode);
+      if (childnode.radio) {
+        radio = [...radio, childnode.id];
       }
 
       return (
@@ -27,14 +21,13 @@ const Node = ({
 
   return (
     <li>
-      <div
-        onClick={() => {
-          console.log("click");
-          handleExtend(node.id);
-        }}
-      >
-        <div className={node.type}></div>
-        <span>{node.label}</span>
+      <div onClick={() => handleExtend(node, radio)}>
+        <div className="tree">
+          {node.child && (
+            <div className={node.radio ? "radio" : "checkbox"}></div>
+          )}
+        </div>
+        <div>{node.label}</div>
       </div>
       {childnodes && handleExtendedCheck(node.id) ? (
         <ul>{childnodes}</ul>

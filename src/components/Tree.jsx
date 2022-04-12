@@ -8,30 +8,36 @@ const Tree = () => {
     extended: [],
     radio: [],
   });
-
-  const handleTypeRadio = (arr) =>
+  const handleRadiosState = (arr) =>
     setState((prevState) => {
-      return { ...prevState, radio: [...prevState.radio, arr] };
+      return { ...prevState, radio: arr };
     });
-
-  const handleExtend = (id, radionodes) => {
-    // console.log(radionodes);
-    radionodes &&
-      radionodes.map((radio) => {
-        // console.log("raz");
-        handleExtend(radio);
+  const handleExtend = ({ id, type }, radio) => {
+    if (type) {
+      let filtered = state.extended.filter(function (item) {
+        return !radio.includes(item);
       });
-    if (radionodes) {
-      radionodes.forEach((node) => {
-        // console.log(node);
-        let filtered = state.extended.filter((element) => {
-          return node !== element;
-        });
-        setState((prevState) => {
-          return { ...prevState, extended: filtered };
-        });
+      setState((prevState) => {
+        return { ...prevState, extended: filtered };
       });
     }
+
+    // radionodes &&
+    //   radionodes.map((radio) => {
+    //     // console.log("raz");
+    //     handleExtend(radio);
+    //   });
+    // if (radionodes) {
+    //   radionodes.forEach((node) => {
+    //     // console.log(node);
+    //     let filtered = state.extended.filter((element) => {
+    //       return node !== element;
+    //     });
+    //     setState((prevState) => {
+    //       return { ...prevState, extended: filtered };
+    //     });
+    //   });
+    // }
     if (state.extended.includes(id)) {
       let filtered = state.extended.filter((element) => {
         return element !== id;
@@ -47,7 +53,6 @@ const Tree = () => {
     }
   };
   const handleExtendedCheck = (id) => {
-    console.log(id);
     return state.extended.includes(id);
   };
 
@@ -59,7 +64,6 @@ const Tree = () => {
         key={listItem.id}
         handleExtend={handleExtend}
         handleExtendedCheck={handleExtendedCheck}
-        handleTypeRadio={handleTypeRadio}
       />
     );
   });

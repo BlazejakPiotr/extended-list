@@ -8,91 +8,74 @@ h4 {
   margin: 0px;
   text-align: center;
 }
-/* ul {
-  padding: 0;
-  margin: 0;
+
+ul {
   list-style-type: none;
-  position: relative;
-}
-li {
-  border-left: 2px solid #0082e6;
-  margin-left: 1em;
-  padding-left: 1em;
-  position: relative;
-}
-li li {
-  margin-left: 0;
 }
 
-li::before {
-  content: "┗";
-  color: #0082e6;
-  position: absolute;
-  top: -5px;
-  left: -9px;
-}
-ul > li:last-child {
-  border-left: 2px solid transparent;
-}*/
-ul li div {
-  cursor: pointer;
+li div {
   display: flex;
+  align-items: center;
+}
+
+.dir {
+  margin-left: 1;
+  border-left: 1px solid black;
+}
+
+.tree {
+  min-width: 20px;
+  height: 100%;
 }
 
 .checkbox {
   width: 20px;
   height: 20px;
-  border-radius: 4px;
-  background-color: #0082e6;
-  margin-left: 10px;
+  background-color: #4c00ff;
 }
+
 .radio {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: #0082e6;
+  background-color: #4c00ff;
+}
+/* 
+.directory-list ul {
   margin-left: 10px;
+  padding-left: 20px;
+  border-left: 1px solid #0082e6;
 }
 
-ul,
-ul ul {
+.directory-list li {
   list-style: none;
-  margin: 0;
-  padding: 0;
-}
-ul ul {
-  margin-left: 8px;
-}
-ul li {
-  margin: 0px 12px;
-  padding: 0 12px;
-  line-height: 20px;
-  color: #369;
-  font-weight: bold;
-  border-left: 1px solid rgb(100, 100, 100);
-}
-ul li:last-child {
-  border-left: none;
-}
-ul li:before {
-  position: relative;
-  top: 0.9em;
-  height: 1em;
-  width: 22px;
+  color: #888;
 
-  color: white;
-  border-bottom: 1px solid rgb(100, 100, 100);
+}
+
+.directory-list .folder,{
+  color: #777;
+  font-weight: bold;
+}
+
+.directory-list li:before {
   content: "";
-  display: inline-block;
-  left: -12px;
-  z-index: -2;
+  height: 20px;
+  width: 20px;
 }
-ul li:last-child {
-  border-left: 1px solid rgb(100, 100, 100);
+
+.directory-list li.folder:before {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  background-color: #0082e6;
+  margin-left: 0px;
 }
-ul li::marker {
-  display: none;
+
+.directory-list li.folder.radio:before {
+  border-radius: 50%;
 }
-span {
-  margin: 0px 12px;
-}
+
+.directory-list li {
+  display: flex;
+} */
